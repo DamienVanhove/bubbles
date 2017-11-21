@@ -1,0 +1,108 @@
+<!Doctype html>
+<html>
+<head>
+	<title>IT-Link Bubble demo for ImpressJS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+	<link rel="stylesheet" href="css/bubbles.css" type="text/css"/>
+	<meta charset="ISO-8859-1"> 
+</head>
+<body>
+<div id="impress">
+<div class="step backBubble" id="backGroundBubble" data-x="0" data-y="0"></div>
+
+	<div class="step bubble" level="1" id="1" data-rotate="0"><h1 class="bubbleTitle" id="1Title">Entreprises</h1></div>
+			
+			<div class="step bubble" level="2" parent="1" id="1.1"><div class="logoSquare"><img src="./img/eurocontrole.png"></div></div>
+				<div class="step bubble" level="3" parent="1.1" id="1.1.1"><span class="projectTitleSpan">Project#1</span></div>
+				<div class="step bubble" level="3" parent="1.1" id="1.1.2"><span class="projectTitleSpan">Project#2</span></div>
+				<div class="step bubble" level="3" parent="1.1" id="1.1.3">
+					<span class="projectTitleSpan">Carriere Zimbabwe</span>
+					<div class="infoSquare">
+						<div class="infoCollumn">
+							<span>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</span>
+						</div>
+						<div class="techCollumn">
+							<ul>
+								<a href=""><li>Variateurs de tension</li></a>
+								<a href=""><li>Variateur spacio-temporel</li></a>
+								<a href=""><li>Flux dilator</li></a>
+								<a href="#3.2"><li>Audit</li></a>
+							</ul>
+						</div>
+					</div>
+				</div>	
+			
+			<div class="step bubble" level="2" parent="1" id="1.2"><div class="logoSquare"><img src="./img/edf.png"></div></div>
+			<div class="step bubble" level="2" parent="1" id="1.3"><div class="logoSquare"><img src="./img/franceTelevisions.png"></div></div>
+			<div class="step bubble" level="2" parent="1" id="1.4"><div class="logoSquare"><img src="./img/volvo.png"></div></div>
+			<div class="step bubble" level="2" parent="1" id="1.5"><div class="logoSquare"><img src="./img/alstom.png"></div></div>
+		
+	<div class="step bubble " level="1" id="2" data-rotate="-180"><h1 class="bubbleTitle" id="2Title">Info</h1></div>
+			
+			<div class="step bubble" level="2" parent="2" id="2.1" data-rotate="-180">2.1</div>
+			<div class="step bubble" level="2" parent="2" id="2.2" data-rotate="-180">2.2</div>
+		
+	<div class="step bubble " level="1" id="3" data-rotate="-90"><h1 class="bubbleTitle" id="3Title">Expertise</h1></div>
+			<div class="step bubble" level="2" parent="3" id="3.1" data-rotate="-90"><div class="logoSquare"><img src="./icons/router.png"></div></div>
+			<div class="step bubble" level="2" parent="3" id="3.2" data-rotate="-90"><div class="logoSquare"><img src="./icons/fingerprint.png"></div></div>
+				<div class="step bubble" level="3" parent="3.2" id="3.2.1" data-rotate="-90">
+					<span class="projectTitleSpan">Audit</span>
+					<div class="infoSquare">
+						<div class="infoCollumn">
+							<span>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</span>
+						</div>
+						<div class="companyCollumn">
+							<ul>
+								<a href="#1.5"><li>Alstom</li></a>
+								<a href="#1.1"><li>EuroControle</li></a>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="step bubble" level="3" parent="3.2" id="3.2.2" data-rotate="-90">
+					<span class="projectTitleSpan">Biometrie</span>
+					<div class="infoSquare">
+						<div class="infoCollumn">
+							<span>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</span>
+						</div>
+						<div class="companyCollumn">
+							<ul>
+								<a href="#1.2"><li>EDF</li></a>
+								<a href="#1.3"><li>France Televisions</li></a>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="step bubble" level="3" parent="3.2" id="3.2.3" data-rotate="-90"></div>
+
+			<div class="step bubble" level="2" parent="3" id="3.3" data-rotate="-90"><div class="logoSquare"><img src="./icons/chip.png"></div></div>
+
+	</div>
+	<script src="js/bubbles.js"></script>	
+	<script type="text/javascript" src="js/impress.js"></script>
+	<script type="text/javascript" src="js/lettering.js"></script>
+
+</body>
+</html>

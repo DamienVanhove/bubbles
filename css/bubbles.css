@@ -1,0 +1,129 @@
+h1 {
+	
+}
+
+body {
+	height: 100%;
+	background-color:  ;
+	background: linear-gradient(#4b4c4f, #102c59);
+}
+
+.backBubble {
+	color: black;
+	text-align: center;
+	z-index: 0;
+}
+
+[level="1"] {
+	background: #acacaf;
+	border-radius: 50%;
+	font-size: 150px;
+	color: #fff;
+	text-align: center;
+	z-index: 1;
+	box-shadow: 5px 5px 5px grey;
+}
+
+[level="2"] {
+	background: #e8e8ed;
+	border-radius: 50%;
+	font-size: 120px;
+	text-align: center;
+	z-index: 2;
+	box-shadow: 5px 5px 5px grey;
+}
+
+[level="3"] {
+	background: #45456d;
+	border-radius: 50%;
+	font-size: 50px;
+	text-align: center;
+	z-index: 3;
+	box-shadow: 3px 3px 3px grey;
+}
+
+[level="4"] {
+	background: grey;
+	border-radius: 50%;
+	font-size: 50px;
+	text-align: center;
+	z-index: 4;
+}
+
+.logoSquare {
+	position: absolute;
+	/*background-color: #ffbf80;*/
+	top: 19%;
+	left: 5%;
+	height: 62%;
+	width: 90%;
+}
+
+.projectTitleSpan {
+	position: absolute;
+	width: 90%;
+	left: 5%;
+	top:10%;
+	display: flex; /* or inline-flex */
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-content: space-around;
+	color: white;
+}
+
+.infoSquare {
+	position: absolute;
+	/*background-color: #ffbf80;*/
+	top: 19%;
+	left: 5%;
+	height: 62%;
+	width: 90%;
+	font-size: 30px;
+	display:flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content: space-evenly;
+	color: white;
+}
+
+.infoSquare > .infoCollumn {
+	width: 85%;
+	/*background-color: white;*/
+	/*display: inline-block; */
+	/* float: left; */
+	padding-left: 25px;
+}
+
+.infoSquare > .techCollumn {
+	/*display: inline-block; */
+	/*background-color: grey;*/
+	text-align: left;
+	padding-right: 25px;
+}
+
+.infoSquare > .companyCollumn {
+	/*display: inline-block; */
+	/*background-color: grey;*/
+	text-align: left;
+	padding-right: 25px;
+}
+
+img {
+    width: 100%; /* or any custom size */
+    height: 100%; 
+    object-fit: contain;
+}
+
+h1 {
+	font-size: 100px;
+	transform: translateY(-200px);
+}
+
+li { 
+	cursor: pointer; 
+}
+
+a {
+  color: white;
+  text-decoration: none; /* no underline */
+}
