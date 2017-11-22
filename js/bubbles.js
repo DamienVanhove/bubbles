@@ -1,15 +1,22 @@
 $(document).ready(function(e) {   
 	console.log('i am ready!');
 
-	var history = ['backGroundBubble'];
+	var history = [$('#backGroundBubble')];
 	var cursorPosition = 0;
 	var navFlag = 0;
 
 	$('.bubble, #backGroundBubble, a').on("click", function() {
+		console.log('click!');
 		if (!$(this).hasClass('present')) {
-			history.length = cursorPosition +1;
-			cursorPosition += 1;
-			history.push($(this));
+			if (navFlag != 1) {
+				history.length = cursorPosition +1;
+				history.push($(this));
+				cursorPosition += 1;	
+			}
+			navFlag = 0;
+		}
+		else { 
+			console.log('did not want to click');
 		}
 	})
 
@@ -48,28 +55,30 @@ $(document).ready(function(e) {
 		let newWidth;
 		let newHeight;
 		let newRadius;
+		let goTo;
 		let level = parseInt($('.active').attr('level'));
 		switch ( e.key) {
         	case "ArrowLeft":
         		if (cursorPosition > 0) {
         			cursorPosition -= 1;
-        			window.history.back()
+        			goTo = history[cursorPosition];
+        			navFlag = 1;
+        			$(goTo).click();
         		}
             	break;
             case "ArrowRight":  
             	if (cursorPosition !== history.length -1) {
-            		window.history.forward();
-            		cursorPosition += 1;
+        			cursorPosition += 1;
+        			goTo = history[cursorPosition];
+        			navFlag = 1;
+        			$(goTo).click();
             	}       	
             	break;
-            	// !! data-scale and radius modifications do not work "on the fly" with impressJS. migrate to and use jimpress //
             case "+":            	
             	newWidth = $('.active').width() + 10;
             	newHeight = $('.active').height() + 10;
             	let scale = parseInt($('.active').attr('data-scale')) + 1;
             	$('.active').attr('data-scale', scale);
-            	console.log(scale);
-            	impress().init();
             	/*$('.active').css({        	
 					"height": newHeight,
 					"width": newWidth,

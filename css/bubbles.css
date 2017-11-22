@@ -21,7 +21,7 @@ body {
 	color: #fff;
 	text-align: center;
 	z-index: 1;
-	box-shadow: 5px 5px 5px grey;
+	box-shadow: 5px 5px 2px grey;
 }
 
 [level="2"] {
@@ -30,7 +30,7 @@ body {
 	font-size: 120px;
 	text-align: center;
 	z-index: 2;
-	box-shadow: 5px 5px 5px grey;
+	box-shadow: 5px 5px 2px grey;
 }
 
 [level="3"] {
@@ -39,7 +39,7 @@ body {
 	font-size: 50px;
 	text-align: center;
 	z-index: 3;
-	box-shadow: 3px 3px 3px grey;
+	box-shadow: 3px 3px 2px grey;
 }
 
 [level="4"] {
