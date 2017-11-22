@@ -149,14 +149,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	$('.backBubble').attr("data-scale",85);
 	$('[level=1]').attr("data-scale",33); 
-	$('[level=2]').attr("data-scale",10);
-	$('[level=3]').attr("data-scale",4);
-	$('[level=4]').attr("data-scale",1.5);
+	$('[level=2]').attr("data-scale",9);
+	$('[level=3]').attr("data-scale",3);
+	$('[level=4]').attr("data-scale",1);
 
 	$('.backBubble').attr("radius",20500);
 	$('[level=1]').attr("radius",10000);	
 	$('[level=2]').attr("radius",2700);		        
-	$('[level=3]').attr("radius",1000);
+	$('[level=3]').attr("radius",8000);
 	$('[level=4]').attr("radius",1000);
 
 	$('.backBubble').css({        	
