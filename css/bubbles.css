@@ -94,11 +94,16 @@ body {
 	padding-left: 25px;
 }
 
+.infoCollumn span {
+	display: block;
+}
+
 .infoSquare > .techCollumn {
 	/*display: inline-block; */
 	/*background-color: grey;*/
 	text-align: left;
 	padding-right: 25px;
+	display: inline-block;
 }
 
 .infoSquare > .companyCollumn {
@@ -126,4 +131,8 @@ li {
 a {
   color: white;
   text-decoration: none; /* no underline */
+}
+
+.projectTitleSpan {
+	display: block;
 }

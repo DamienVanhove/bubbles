@@ -5,8 +5,7 @@ $(document).ready(function(e) {
 	var cursorPosition = 0;
 	var navFlag = 0;
 
-	$('.bubble, #backGroundBubble, a').on("click", function() {
-		console.log('click!');
+	$('.bubble, #backGroundBubble').on("click", function() {
 		if (!$(this).hasClass('present')) {
 			if (navFlag != 1) {
 				history.length = cursorPosition +1;
@@ -14,9 +13,6 @@ $(document).ready(function(e) {
 				cursorPosition += 1;	
 			}
 			navFlag = 0;
-		}
-		else { 
-			console.log('did not want to click');
 		}
 	})
 
@@ -32,16 +28,17 @@ $(document).ready(function(e) {
 		$('[level=4]').hide();
 	})
 
-	$('[level=2]').on("click",function(){
+	$('[level=2]').on("click",function(event){
 		let id = escapeSelector(($(this).attr('id')));
 		$(this).find('.logoSquare').hide();
 		$('[level=3]'+'[parent='+id+']').show();
 	})
 
-	$('[level=3]').on("click",function(){
+	$('[level=3]').on("click",function(event){
 		let id = escapeSelector(($(this).attr('id')));
-		$(this).find('.ProjectSquare').hide();
-		$('[level=4]'+'[parent='+id+']').show();
+		let parent = ($(this).attr('parent'));
+		$(this).show();
+		$('#' + escapeSelector(parent)).find('.logoSquare').hide();
 	})
 
 	$('a').on("click",function(){
@@ -49,58 +46,90 @@ $(document).ready(function(e) {
 		let hashlessID = escapeHash(id);
 		$(id).find('.logoSquare').hide();
 		$('[level=3]'+'[parent='+hashlessID+']').show();
+		history.length = cursorPosition +1;
+		history.push($(id));
+		cursorPosition += 1;
+	})
+
+	$('.projectTitleSpan').on("click",function(event){
+		if ( event.ctrlKey ) {
+        	$(this).html(prompt("enter new title"));
+    	}
+	})
+
+	$('.infoCollumn span').on("click",function(event){
+		if ( event.ctrlKey ) {
+			let content = prompt("enter content");
+			if (content) {$(this).html(content);}
+    	}
+	})
+
+	$('.techCollumn').on("click",function(event){
+		event.stopPropagation();
+		if ( event.ctrlKey ) {
+			let content = prompt("Name of new link?");
+			let link = prompt("Target for link?");
+			if (content && link) {
+				$('ul', this).append('<li>well that was easy</li>');
+			}
+    	}
 	})
 
 	$(window).on("keyup",function(e) {
 		let newWidth;
 		let newHeight;
 		let newRadius;
-		let goTo;
+		let destination;
 		let level = parseInt($('.active').attr('level'));
+		
 		switch ( e.key) {
         	case "ArrowLeft":
         		if (cursorPosition > 0) {
         			cursorPosition -= 1;
-        			goTo = history[cursorPosition];
+        			destination = history[cursorPosition];
         			navFlag = 1;
-        			$(goTo).click();
+        			$(destination).click();
         		}
             	break;
             case "ArrowRight":  
             	if (cursorPosition !== history.length -1) {
         			cursorPosition += 1;
-        			goTo = history[cursorPosition];
+        			destination = history[cursorPosition];
         			navFlag = 1;
-        			$(goTo).click();
+        			$(destination).click();
             	}       	
             	break;
+
             case "+":            	
-            	newWidth = $('.active').width() + 10;
-            	newHeight = $('.active').height() + 10;
-            	let scale = parseInt($('.active').attr('data-scale')) + 1;
-            	$('.active').attr('data-scale', scale);
-            	/*$('.active').css({        	
-					"height": newHeight,
-					"width": newWidth,
-    			});*/
+            	let upScale = parseInt($('.active').attr('data-scale')) + 1;
+            	$('.active').attr('data-scale', upScale);
+            	impress().goto($('.active').attr('id'));
+
             	break;
             case "-":
-            	newWidth = $('.active').width() - 10;
-            	newHeight = $('.active').height() - 10;
-            	$('.active').css({        	
-					"height": newHeight,
-					"width": newWidth,
-    			});
+            	let downScale = parseInt($('.active').attr('data-scale')) - 1;
+            	$('.active').attr('data-scale', downScale);
+            	impress().goto($('.active').attr('id'));
             	break;            	
+            
+
             case "4":
-            	newRadius = parseInt($('.active').attr('radius')) + 10;
+            	newRadius = parseInt($('.active').attr('radius')) + 100;
             	$('.active').attr('radius',newRadius);
-            	console.log('newRadius', newRadius);
+
+            	level != 0? distributeLevelnBubbles(level +1): distributeBubbles(1);
+
+            	console.log('id',$('.active').attr('id'),'level',level);
+            	impress().goto($('.active').attr('id'));
             	break;
+            
+
             case "6":
-            	newRadius = parseInt($('.active').attr('radius')) - 10;
+            	newRadius = parseInt($('.active').attr('radius')) - 100;
             	$('.active').attr('radius',newRadius);
-            	console.log('newRadius', newRadius,'level',level);
+				level != 0? distributeLevelnBubbles(level +1): distributeBubbles(1);
+				console.log('id',$('.active').attr('id'),'level',level);
+            	impress().goto($('.active').attr('id'));
             	break;
         break;
         }
@@ -124,9 +153,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	$('[level=3]').attr("data-scale",4);
 	$('[level=4]').attr("data-scale",1.5);
 
-	$('[level=1]').attr("radius",20500);	
-	$('[level=2]').attr("radius",10000);		        
-	$('[level=3]').attr("radius",2700);
+	$('.backBubble').attr("radius",20500);
+	$('[level=1]').attr("radius",10000);	
+	$('[level=2]').attr("radius",2700);		        
+	$('[level=3]').attr("radius",1000);
 	$('[level=4]').attr("radius",1000);
 
 	$('.backBubble').css({        	
@@ -157,8 +187,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
    	$('[level=3]').hide();
    	$('[level=4]').hide();
 
-	distributeTopBubbles(1);
-	distributeLevelnBubbles(2)
+	distributeBubbles(1);
+	// distributeLevelnBubbles(2)
 
 	impress().init();
 });
@@ -174,19 +204,20 @@ function escapeHash(s){
 
 }
 
-function distributeTopBubbles(n) {
+function distributeBubbles(n) {
 			let nBubbles = $("[level=" + n +"]");
 			let step = (2*Math.PI) / nBubbles.length;
 	    	let angle = 0;
+	    	let radius = parseInt($('.backBubble').attr('radius'));
 
 			nBubbles.each(function() {				
-		        let radius = parseInt($(this).attr('radius'));
 		        let x = Math.round(radius * Math.cos(angle)); //- $(this).width()/2);
 		        let y = Math.round(radius * Math.sin(angle)); //- $(this).height()/2);
 
 				$(this).attr("data-x",x).attr("data-y",y);		        
 		        angle += step;
 			});
+			distributeLevelnBubbles(n+1);
 	}
 
 function distributeLevelnBubbles(n) {
@@ -196,9 +227,10 @@ function distributeLevelnBubbles(n) {
 		let nBubbles = $('[level='+n+']'+'[parent='+id+']');
 		let step = (2*Math.PI) / nBubbles.length;
     	let angle = 0;
+    	let that = this;
 
 		nBubbles.each(function() {
-			let radius = parseInt($(this).attr('radius'));
+			let radius = parseInt($(that).attr('radius')); // prendre celui du parent
 	        let x = Math.round(parseInt($('#'+id).attr('data-x')) + radius * Math.cos(angle)); 
 	        let y = Math.round(parseInt($('#'+id).attr('data-y')) + radius * Math.sin(angle)); 
 
