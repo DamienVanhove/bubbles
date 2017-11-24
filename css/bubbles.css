@@ -4,50 +4,71 @@ h1 {
 
 body {
 	height: 100%;
-	background-color:  ;
 	background: linear-gradient(#4b4c4f, #102c59);
 }
 
 .backBubble {
 	color: black;
-	text-align: center;
 	z-index: 0;
 }
 
 [level="1"] {
 	background: #acacaf;
 	border-radius: 50%;
-	/*font-size: 150px;*/
-	color: #fff;
-	text-align: center;
+	box-shadow: 5px 5px grey;
 	z-index: 1;
-	box-shadow: 5px 5px 2px grey;
+}
+
+[level="1"] h1 {
+ color:white;
+ text-align: center;
 }
 
 [level="2"] {
-	background: #e8e8ed;
+	background: #4b4c4f;
 	border-radius: 50%;
-	/*font-size: 120px;*/
-	text-align: center;
+	box-shadow: 5px 5px grey;
 	z-index: 2;
-	box-shadow: 5px 5px 2px grey;
 }
 
 [level="3"] {
-	background: #45456d;
 	border-radius: 50%;
-	/*font-size: 50px;*/
-	text-align: center;
+	box-shadow: 3px 3px grey;
 	z-index: 3;
-	box-shadow: 3px 3px 2px grey;
+}
+
+.entreprise[level="3"] {
+	background: #e8e8ed;
+}
+
+.technology[level="3"] {
+	background: #707e93;
+}
+
+.technology[level="3"] h2{
 }
 
 [level="4"] {
-	background: grey;
 	border-radius: 50%;
-	/*font-size: 50px;*/
+	box-shadow: 3px 3px grey;
+	z-index: 4;
+	
+}
+
+.technology[level="4"] {
+	background: #e8e8ed;
+}
+
+.entreprise[level="4"] {
+	background: #4e5e75;
+}
+
+[level="5"] {
+	background: #e8e8ed;
+	border-radius: 50%;
 	text-align: center;
 	z-index: 4;
+	box-shadow: 3px 3px grey;
 }
 
 .logoSquare {
@@ -60,11 +81,42 @@ body {
 
 .infoSquare {
 	position: absolute;
-	/*background-color: #ffbf80;*/
 	top: 19%;
 	left: 5%;
 	height: 62%;
 	width: 90%;
+	font-size: 30px;
+}
+
+.technology > .infoSquare {
+	font-size: 30px;
+	max-height: 30%;
+	display:flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content:space-evenly;
+	color: white;
+}
+
+.technology > .infoSquare > h2 {
+	text-align: center;
+	max-width: 80%;
+	flex-grow: 1;
+}
+
+.technology > .infoSquare > .info {
+	flex-grow: 1;
+}
+
+.technology > .infoSquare > .info > ul{
+	
+}
+
+.technology > .infoSquare > .info > ul > li {
+	text-align: left;
+}
+
+.entreprise >.infoSquare {
 	font-size: 30px;
 	display:flex;
 	flex-direction: column;
@@ -73,48 +125,31 @@ body {
 	color: white;
 }
 
-.infoSquare > h2 {
+.entreprise > .infoSquare > h2 {
+	text-align: center;
 	max-width: 80%;
-	background-color: blue;
-	color: white;
 	flex-grow: 1;
 }
 
-.infoSquare > span {
-	/*width: 80%;*/
-	color: white;
-	flex-grow: 1;
-}
-
-.infoSquare > .infoCollumn {
-	/*width: 90%;*/
+.entreprise > .infoSquare > .info {
 	max-width: 90%;
-	/*display: inline-block;*/
-	background-color: green;
 	flex-grow: 1;
+	color: white;
 }
 
-.infoSquare > .infoCollumn > ul > li {
-	text-align: left;
+.entreprise > .infoSquare > .info > ul > li {
+	text-align: left; 
 }
 
-.infoSquare > .techCollumn {
-	/*width: 90%;*/
+.entreprise > .infoSquare > .tech {
+	max-width: 90%;
 	text-align: left;
-	/*display: inline-block;*/
-	background-color: red;
 	flex: 0 1 auto;
 }
 
-.techCollumn > li { 
-	cursor: pointer; 
-}
-
-.infoSquare > .companyCollumn {
-	/*display: inline-block; */
-	/*background-color: grey;*/
-	text-align: left;
-	padding-right: 25px;
+.entreprise > .infoSquare > .tech a {
+	color: white;
+	cursor: pointer;
 }
 
 img {
@@ -129,6 +164,5 @@ h1 {
 }
 
 a {
-  color: white;
   text-decoration: none; /* no underline */
 }
