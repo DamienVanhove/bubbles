@@ -9,174 +9,246 @@
 </head>
 <body>
 <div id="impress">
-<div class="step backBubble" level="0" id="backGroundBubble" data-x="0" data-y="0"></div>
+	<!-- ======================================================================= BACKGROUND BUBBLE ============================================================ -->
 
-	<div class="step bubble" level="1" id="1" data-rotate="0"><h1 class="bubbleTitle" id="1Title">Entreprises</h1></div>
-			
-			<div class="step bubble" level="2" parent="1" id="1.1"><div class="logoSquare"><img src="./img/alstom.png"></div></div>
-				<div class="step bubble" level="3" parent="1.1" id="1.1.1">
-					<div class="infoSquare">
-						<h2>Power Design Engineer</h2>
-						<div class="infoCollumn">
-							<span>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt.
-							</span>
-							<ul>
-								<li>Electronique de puissance</li>
-								<li>Design du convertisseur Auxiliaire Simulation des puissances</li>
-								<li>Design du systeme de traction</li>
-								<li>Rediger le cahier des charges pour le fournisseur</li>
-								<li>Suivi fournisseurs de developpements</li>
-							</ul>
-						</div>
-						<div class="techCollumn">
-							<ul>
-								<a href=""><li>MATLAB, SABER, MATHCAD or CITHEL</li></a>
-								<a href=""><li>Transistors IGBT</li></a>
-								<a href=""><li>Convertisseurs de Puissance</li></a>
-								<a href=""><li>transformateurs</li></a>
-								<a href=""><li>diode</li></a>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="step bubble" level="3" parent="1.1" id="1.1.2">
-					<div class="infoSquare">
-						<h2>Architecture fonctionnelle du systeme ERTMS</h2>
-						<div class="infoCollumn">
-							<span>
-							Nothing here neither
-							</span>
-						</div>
-						<div class="techCollumn">
-							<ul>
-								<a href=""><li>single line</li></a>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="step bubble" level="3" parent="1.1" id="1.1.3">
-					<div class="infoSquare">
-						<h2>Architecture detaillee systeme ERTMS</h2>
-						<div class="infoCollumn">
-							<span>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							deserunt mollit anim id est laborum.
-							</span>
-						</div>
-						<div class="techCollumn">
-							<ul>
-								<a href=""><li>Variateurs de tension</li></a>
-								<a href=""><li>Variateur spacio-temporel</li></a>
-								<a href=""><li>Flux dilator</li></a>
-								<a href="#3.2"><li>Audit</li></a>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="step bubble" level="3" parent="1.1" id="1.1.4">
-					<div class="infoSquare">
-					<h2>Developpement de capteurs Tachymetrique</h2>
-						<div class="infoCollumn">
-							<span>
-							Nothing here neither
-							</span>
-						</div>
-						<div class="techCollumn">
-							<ul>
-								<a href=""><li>single line</li></a>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="step bubble" level="3" parent="1.1" id="1.1.5">
-					<div class="infoSquare">
-					<h2>Design et developpement sotfware embarque</h2>
-						<div class="infoCollumn">
-							<ul>
-								<li>Design software</li>
-								<li>Design et maintenance de modules software</li>
-								<li>Tests unitaires, d'integration, de fonctionnalite</li>
-								<li>Redaction de la spec fonctionnnelle,</li>
-								<li>Redaction de specifications et rapports de tests</li>
-								<li>Maintenance des donnees, preparation des serveurs</li>
-							</ul>
-						</div>
-						<div class="techCollumn">
-							<ul>
-								<a href=""><li>Delphi, C, C++, Ada, possiblement Visual Basic</li></a>
-								<a href=""><li>Linux</li></a>
-								<a href=""><li>Microsoft SQL Server</li></a>
-							</ul>
-						</div>
-					</div>
-				</div>					
-			
-			<div class="step bubble" level="2" parent="1" id="1.2"><div class="logoSquare"><img src="./img/bombardier.png"></div></div>
-			<div class="step bubble" level="2" parent="1" id="1.3"><div class="logoSquare"><img src="./img/siemens.png"></div></div>
-			<div class="step bubble" level="2" parent="1" id="1.4"><div class="logoSquare"><img src="./img/ratp.png"></div></div>
-			<div class="step bubble" level="2" parent="1" id="1.5"><div class="logoSquare"><img src="./img/ansaldo.svg"></div></div>
-			<div class="step bubble" level="2" parent="1" id="1.6"><div class="logoSquare"><img src="./img/sncf.png"></div></div>
+	<div class="step backBubble" level="0" id="backGroundBubble" data-x="0" data-y="0"></div>
+
+	<!-- ======================================================================== LEVEL 1 BUBBLES ============================================================= -->
+
+	<div id="1" level="1" class="step bubble" data-rotate="0">		<h1>Entreprises</h1>	</div>
+	<div id="2" level="1" class="step bubble" data-rotate="-180">	<h1>Info</h1>			</div>
+	<div id="3" level="1" class="step bubble" data-rotate="-90">	<h1>Technologie</h1>	</div>
+	
+	<!-- ======================================================================== LEVEL 2 BUBBLES ============================================================= -->	
 		
-	<div class="step bubble " level="1" id="2" data-rotate="-180"><h1 class="bubbleTitle" id="2Title">Info</h1></div>
-			
-			<div class="step bubble" level="2" parent="2" id="2.1" data-rotate="-180">2.1</div>
-			<div class="step bubble" level="2" parent="2" id="2.2" data-rotate="-180">2.2</div>
+		<!-- =========== DOMAINS =========== -->
+	<div id="1.1" parent="1" level="2" class="step bubble domaine"><div class="logoSquare"><img src="./icons/trainWhite.png"></div></div>
+	<div id="1.2" parent="1" level="2" class="step bubble domaine"><div class="logoSquare"><img src="./icons/satelliteWhite.png"></div></div>
+	<div id="1.3" parent="1" level="2" class="step bubble domaine"><div class="logoSquare"><img src="./icons/appWhite.png"></div></div>
+
+		<!-- ======== COMPANY INFO ========= -->
+	<div id="2.1" parent="2" level="2" class="step bubble info" data-rotate="-180"></div>
+	<div id="2.2" parent="2" level="2" class="step bubble info" data-rotate="-180"></div>
+
+		<!-- ========= TECHNOLOGY ========== -->
+	<div id="3.1" parent="3" level="2" class="step bubble technology" data-rotate="-90"><div class="logoSquare"><img src="./icons/softwareWhite.png"></div></div>
+	<div id="3.2" parent="3" level="2" class="step bubble technology" data-rotate="-90"><div class="logoSquare"><img src="./icons/fingerprintWhite.png"></div></div>
+	<div id="3.3" parent="3" level="2" class="step bubble technology" data-rotate="-90"><div class="logoSquare"><img src="./icons/routerWhite.png"></div></div>			
+	<div id="3.4" parent="3" level="2" class="step bubble technology" data-rotate="-90"><div class="logoSquare"><img src="./icons/chipWhite.png"></div></div>		
+
+
+	<!-- ======================================================================== LEVEL 3 BUBBLES ============================================================= -->	
+
+		<!-- ========== CLIENTS ========= -->
+	<div id="1.1.1" parent="1.1" level="3" class="step bubble entreprise"><div class="logoSquare"><img src="./img/alstom.png"></div></div>
+	<div id="1.1.2" parent="1.1" level="3" class="step bubble entreprise"><div class="logoSquare"><img src="./img/bombardier.png"></div></div>
+	<div id="1.1.3" parent="1.1" level="3" class="step bubble entreprise"><div class="logoSquare"><img src="./img/siemens.png"></div></div>
+	<div id="1.1.4" parent="1.1" level="3" class="step bubble entreprise"><div class="logoSquare"><img src="./img/ratp.png"></div></div>
+	<div id="1.1.5" parent="1.1" level="3" class="step bubble entreprise"><div class="logoSquare"><img src="./img/ansaldo.svg"></div></div>
+	<div id="1.1.6" parent="1.1" level="3" class="step bubble entreprise"><div class="logoSquare"><img src="./img/sncf.png"></div></div>
 		
-	<div class="step bubble " level="1" id="3" data-rotate="-90"><h1 class="bubbleTitle" id="3Title">Expertise</h1></div>
-			<div class="step bubble" level="2" parent="3" id="3.1" data-rotate="-90"><div class="logoSquare"><img src="./icons/router.png"></div></div>
-			<div class="step bubble" level="2" parent="3" id="3.2" data-rotate="-90"><div class="logoSquare"><img src="./icons/fingerprint.png"></div></div>
-				<div class="step bubble" level="3" parent="3.2" id="3.2.1" data-rotate="-90">
-					<span class="projectTitleSpan">Audit</span>
-					<div class="infoSquare">
-						<div class="infoCollumn">
-							<span>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-							</span>
-						</div>
-						<div class="companyCollumn">
-							<ul>
-								<a href="#1.5"><li>Alstom</li></a>
-								<a href="#1.1"><li>EuroControle</li></a>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="step bubble" level="3" parent="3.2" id="3.2.2" data-rotate="-90">
-					<span class="projectTitleSpan">Biometrie</span>
-					<div class="infoSquare">
-						<div class="infoCollumn">
-							<span>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-							</span>
-						</div>
-						<div class="companyCollumn">
-							<ul>
-								<a href="#1.2"><li>EDF</li></a>
-								<a href="#1.3"><li>France Televisions</li></a>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="step bubble" level="3" parent="3.2" id="3.2.3" data-rotate="-90"></div>
 
-			<div class="step bubble" level="2" parent="3" id="3.3" data-rotate="-90"><div class="logoSquare"><img src="./icons/chip.png"></div></div>
-
+		<!-- ======== TECHNOLOGY ======== -->
+	<div id="3.1.1" parent="3.1" level="3" class="step bubble technology"   data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Langages</h2>
+			<div class="info">
+				<ul>
+					<li>C</li>
+					<li>C++</li>
+					<li>ADA</li>
+					<li>Delphi</li>
+					<li>Python</li>
+				</ul>
+			</div>
+		</div>
 	</div>
+
+	<div id="3.1.2" parent="3.1" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Systemes d'exploitation</h2>
+			<div class="info">
+				<ul>
+					<li>Linux</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="3.1.3" parent="3.1" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Environnement de travail</h2>
+			<div class="info">
+				<ul>
+					<li>Microsoft Visual Studio</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="3.1.4" parent="3.1" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>DataBases</h2>
+			<div class="info">
+				<ul>
+					<li>Microsoft SQL Server</li>
+					<li>MongoDB</li>
+					<li>SQLite</li>
+					<li>Cassandra</li>
+					<li>QBase</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="3.2.1" parent="3.2" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Audit</h2>
+			<div class="info">
+			</div>
+		</div>
+	</div>
+
+	<div id="3.2.2" parent="3.2" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Biometrie</h2>
+			<div class="info">
+			</div>
+		</div>
+	</div>
+
+	<div id="3.2.3" parent="3.2" level="3" class="step bubble technology" data-rotate="-90"></div>
+		
+	<div id="3.4.1" parent="3.4" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Electronique de Puissance</h2>
+			<div class="info">
+				<ul>
+					<li>Transistor IGBT</li>
+					<li>Convertisseurs de Puissance</li>
+					<li>Transformateurs</li>
+					<li>Diodes</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div id="3.4.2" parent="3.4" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Outils logiciels</h2>
+			<div class="info">
+				<ul>
+					<li>Altium Designer</li>
+					<li>Saber</li>
+					<li>MathCad</li>
+					<li>Cithel</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="3.4.3" parent="3.4" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Micro-electronique</h2>
+			<div class="info">
+			</div>
+		</div>
+	</div>
+
+	<!-- ======================================================================== LEVEL 4 BUBBLES ============================================================= -->	
+
+		<!-- ========== MISSIONS ========= -->
+	<div id="1.1.1.1" parent="1.1.1" level="4" class="step bubble missions">
+		<div class="infoSquare">
+			<h2>Power Design Engineer</h2>
+			<div class="info">
+				<ul>
+					<li>Electronique de puissance</li>
+					<li>Design du convertisseur Auxiliaire Simulation des puissances</li>
+					<li>Design du systeme de traction</li>
+					<li>Rediger le cahier des charges pour le fournisseur</li>
+					<li>Suivi fournisseurs de developpements</li>
+				</ul>
+			</div>
+			<div class="tech">
+				<ul>
+					<a href="#3.4"><li>MATLAB, SABER, MATHCAD or CITHEL</li></a>
+					<a href="#3.4"><li>Transistors IGBT</li></a>
+					<a href="#3.4"><li>Convertisseurs de Puissance</li></a>
+					<a href="#3.4"><li>Transformateurs</li></a>
+					<a href="#3.4"><li>Diode</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="1.1.1.2" parent="1.1.1" level="4" class="step bubble missions">
+		<div class="infoSquare">
+			<h2>Architecture fonctionnelle du systeme ERTMS</h2>
+			<div class="info">
+			</div>
+			<div class="tech">
+			</div>
+		</div>
+	</div>
+
+	<div id="1.1.1.3" parent="1.1.1" level="4" class="step bubble missions">
+		<div class="infoSquare">
+			<h2>Architecture detaillee systeme ERTMS</h2>
+			<div class="info">
+			</div>
+			<div class="tech">
+			</div>
+		</div>
+	</div>
+
+	<div id="1.1.1.4" parent="1.1.1" level="4" class="step bubble missions">
+		<div class="infoSquare">
+		<h2>Developpement de capteurs Tachymetrique</h2>
+			<div class="info">
+			</div>
+			<div class="tech">
+			</div>
+		</div>
+	</div>
+
+	<div id="1.1.1.5" parent="1.1.1" level="4" class="step bubble missions">
+		<div class="infoSquare">
+		<h2>Design et developpement sotfware embarque</h2>
+			<div class="info">
+				<ul>
+					<li>Design software</li>
+					<li>Design et maintenance de modules software</li>
+					<li>Tests unitaires, d'integration, de fonctionnalite</li>
+					<li>Redaction de la spec fonctionnnelle,</li>
+					<li>Redaction de specifications et rapports de tests</li>
+					<li>Maintenance des donnees, preparation des serveurs</li>
+				</ul>
+			</div>
+			<div class="tech">
+				<ul>
+					<a href="#3.1"><li>Delphi, C, C++, Ada, 
+					<a href="#3.1"><li>Visual Basic</li></a>
+					<a href="#3.1"><li>Linux</li></a>
+					<a href="#3.1"><li>Microsoft SQL Server</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+		<!-- ========== COMPANY LINKS ========= -->
+	<div id="3.4.1.1" parent="3.4.1" level="4" class="step dummy bubble technology" data-rotate="-90"><div class="logoSquare"><a href="#1.3"><img src="./img/siemens.png"></a></div></div>
+	<div id="3.4.1.2" parent="3.4.1" level="4" class="step dummy bubble technology" data-rotate="-90"><div class="logoSquare"><a href="#1.2"><img src="./img/bombardier.png"></a></div></div>
+	<div id="3.4.1.3" parent="3.4.1" level="4" class="step dummy bubble technology" data-rotate="-90"><div class="logoSquare"><a href="#1.1"><img src="./img/alstom.png"></a></div></div>
+	<div id="3.4.2.1" parent="3.4.2" level="4" class="step dummy bubble technology" data-rotate="-90"><div class="logoSquare"><a href="#1.1"><img src="./img/alstom.png"></a></div></div>
+
+
+	<!-- =========================================================================== SCRIPTS ============================================================= -->		
+
 	<script src="js/bubbles.js"></script>	
 	<script type="text/javascript" src="js/impress.js"></script>
 	<script type="text/javascript" src="js/lettering.js"></script>
 
 </body>
 </html>
+
