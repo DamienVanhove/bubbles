@@ -466,7 +466,7 @@
             
             if ( !initialized || !(el = getStep(el)) ) {
                 // presentation not initialized or given element is not a step
-                console.log('did not find step');
+                // console.log('did not find step');
                 return false;
             }
             

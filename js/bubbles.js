@@ -31,6 +31,7 @@ $(document).ready(function(e) {
 	$('[level=1]').on("click",function(){
 		console.log('3');
 		$('[level=2]').children('.logoSquare').show('scale',{ percent: 0 },1000);
+		$('[level=3]').children('.logoSquare').show();
 		$('[level=3]').hide();
 		$('[level=4]').hide();
 	})
@@ -48,15 +49,8 @@ $(document).ready(function(e) {
 		})
 	})
 
-	$('.domaine').on("click",function(event) {
-		console.log("5");
-		$('[level=3]').children('.logoSquare').show('scale',{ percent: 0 },1000);
-		$('[level=4]').hide();
-		$('[level=5]').hide();
-	})
-
 	$('[level=3]').on("click",function(event) {
-		console.log("6");
+		console.log("5");
 		$(this).show();
 		$(this).find('.logoSquare').hide();
 		let id = escapeSelector(($(this).attr('id')));
@@ -65,37 +59,19 @@ $(document).ready(function(e) {
 		$('#' + escapeSelector(parent)).find('.logoSquare').hide();
 	})
 
-	$('a').on("click",function(event) {
-		console.log("7");
-		
-		let id = escapeSelector(($(this).attr('href')));
-		let parent = escapeSelector($(id).attr('parent'));
-		let hashlessID = escapeHash(id);
+	$('.domaine').on("click",function(event) {
+		console.log("6");
+		$('[level=3]').children('.logoSquare').show('scale',{ percent: 0 },1000);
+		$('[level=4]').hide();
+		$('[level=5]').hide();
+	})
 
-		// navFlag = 1;
+
+	$('a').on("click",function(event) {
+		console.log("7");		
+		let id = escapeSelector(($(this).attr('href')));
 		$(id).click();
 		event.stopPropagation();
-
-/*
-		$(id).find('.logoSquare').hide();
-
-		// cacher le logo, mais aussi le badge du coup!
-		console.log($(id).find('.logoSquare'));
-		console.log('parent:', parent);
-
-		$('#'+parent).find('.logoSquare').hide();
-
-		// cacher le logo du parent
-
-
-
-		$('[level=3]'+'[parent='+hashlessID+']').show();
-
-		history.length = cursorPosition +1;
-		history.push($(id));
-		cursorPosition += 1;
-		$('[level=4]').show();
-		*/
 	})
 /*
 	$('h2').on("click",function(event) {
@@ -293,6 +269,7 @@ function distributeLevelnBubbles(n) { // 1
 
 		children.each(function() {
 			let radius = parseInt($(this).attr('radius'));
+			children.length == 1 ? radius = 0 : null;
 	        let x = Math.round(parseInt($('#'+id).attr('data-x')) + radius * Math.cos(angle)); 
 	        let y = Math.round(parseInt($('#'+id).attr('data-y')) + radius * Math.sin(angle)); 
 			$(this).attr("data-x",x).attr("data-y",y);

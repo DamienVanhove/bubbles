@@ -5,7 +5,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 	<link rel="stylesheet" href="css/bubbles.css" type="text/css"/>
-	<meta charset="ISO-8859-1"> 
+	<meta charset="UTF-8">
 </head>
 <body>
 <div id="impress">
@@ -24,7 +24,8 @@
 		<!-- =========== DOMAINS =========== -->
 	<div id="1.1" parent="1" level="2" class="step bubble domaine"><div class="logoSquare"><img src="./icons/trainWhite.png"></div></div>
 	<div id="1.2" parent="1" level="2" class="step bubble domaine"><div class="logoSquare"><img src="./icons/satelliteWhite.png"></div></div>
-	<div id="1.3" parent="1" level="2" class="step bubble domaine"><div class="logoSquare"><img src="./icons/appWhite.png"></div></div>
+	<div id="1.3" parent="1" level="2" class="step bubble domaine"><div class="logoSquare"><img src="./icons/circuitWhite.png"></div></div>
+	<div id="1.4" parent="1" level="2" class="step bubble domaine"><div class="logoSquare"><img src="./icons/airplaneWhite.png"></div></div>
 
 		<!-- ======== COMPANY INFO ========= -->
 	<div id="2.1" parent="2" level="2" class="step bubble info" data-rotate="-180"><div class="logoSquare"><img src="./icons/chartWhite.png"></div></div>
@@ -32,9 +33,10 @@
 
 		<!-- ========= TECHNOLOGY ========== -->
 	<div id="3.1" parent="3" level="2" class="step bubble technology" data-rotate="-90"><div class="logoSquare"><img src="./icons/softwareWhite.png"></div></div>
-	<div id="3.2" parent="3" level="2" class="step bubble technology" data-rotate="-90"><div class="logoSquare"><img src="./icons/fingerprintWhite.png"></div></div>
-	<div id="3.3" parent="3" level="2" class="step bubble technology" data-rotate="-90"><div class="logoSquare"><img src="./icons/routerWhite.png"></div></div>			
+	<div id="3.2" parent="3" level="2" class="step bubble technology" data-rotate="-90"><div class="logoSquare"><img src="./icons/transverseWhite.png"></div></div>
+	<div id="3.3" parent="3" level="2" class="step bubble technology" data-rotate="-90"><div class="logoSquare"><img src="./icons/mechanicsWhite.png"></div></div>			
 	<div id="3.4" parent="3" level="2" class="step bubble technology" data-rotate="-90"><div class="logoSquare"><img src="./icons/chipWhite.png"></div></div>		
+	<div id="3.5" parent="3" level="2" class="step bubble technology" data-rotate="-90"><div class="logoSquare"><img src="./icons/thermoWhite.png"></div></div>
 
 	<!-- ======================================================================== LEVEL 3 BUBBLES ============================================================= -->	
 
@@ -45,19 +47,25 @@
 	<div id="1.1.4" parent="1.1" level="3" class="step bubble entreprise"><div class="logoSquare"><img src="./img/ratp.png"></div></div>
 	<div id="1.1.5" parent="1.1" level="3" class="step bubble entreprise"><div class="logoSquare"><img src="./img/ansaldo.svg"></div></div>
 	<div id="1.1.6" parent="1.1" level="3" class="step bubble entreprise"><div class="logoSquare"><img src="./img/sncf.png"></div></div>
+
+	<div id="1.2.1" parent="1.2" level="3" class="step bubble entreprise"><div class="logoSquare"><img src="./img/thales.png"></div></div>
+
+	<div id="1.3.1" parent="1.3" level="3" class="step bubble entreprise"><div class="logoSquare"><img src="./img/jema.png"></div></div>
+	<div id="1.3.2" parent="1.3" level="3" class="step bubble entreprise"><div class="logoSquare"><img src="./img/barcoSilex.png"></div></div>
+	<div id="1.3.3" parent="1.3" level="3" class="step bubble entreprise"><div class="logoSquare"><img src="./img/technicolor.png"></div></div>
+
+	<div id="1.4.1" parent="1.4" level="3" class="step bubble entreprise"><div class="logoSquare"><img src="./img/eurocontrole.png"></div></div>
 		
 
 		<!-- ======== TECHNOLOGY ======== -->
-	<div id="3.1.1" parent="3.1" level="3" class="step bubble technology"   data-rotate="-90">
+
+	<div id="3.1.1" parent="3.1" level="3" class="step bubble technology" data-rotate="-90">
 		<div class="infoSquare">
-			<h2>Langages</h2>
+			<h2>ERP/SAP</h2>
 			<div class="info">
 				<ul>
-					<li>C</li>
-					<li>C++</li>
-					<li>ADA</li>
-					<li>Delphi</li>
-					<li>Python</li>
+					<li>Données au sein d'une entreprise</li>
+					<li>Gestion, création, analyse</li>
 				</ul>
 			</div>
 		</div>
@@ -65,10 +73,11 @@
 
 	<div id="3.1.2" parent="3.1" level="3" class="step bubble technology" data-rotate="-90">
 		<div class="infoSquare">
-			<h2>Systemes d'exploitation</h2>
+			<h2>Applicatif/Web</h2>
 			<div class="info">
 				<ul>
-					<li>Linux</li>
+					<li>Applications haut niveau</li>
+					<li>Applications web</li>
 				</ul>
 			</div>
 		</div>
@@ -76,10 +85,13 @@
 
 	<div id="3.1.3" parent="3.1" level="3" class="step bubble technology" data-rotate="-90">
 		<div class="infoSquare">
-			<h2>Environnement de travail</h2>
+			<h2>Firmware</h2>
 			<div class="info">
 				<ul>
-					<li>Microsoft Visual Studio</li>
+					<li>Affichage d'informations.</li>
+					<li>Embarqué.</li>
+					<li>Peut intérragir avec le bas niveau.</li>
+					<li>Envoi d'informations vers micro-controlleur.</li>
 				</ul>
 			</div>
 		</div>
@@ -87,14 +99,38 @@
 
 	<div id="3.1.4" parent="3.1" level="3" class="step bubble technology" data-rotate="-90">
 		<div class="infoSquare">
-			<h2>DataBases</h2>
+			<h2>Middleware</h2>
 			<div class="info">
 				<ul>
-					<li>Microsoft SQL Server</li>
-					<li>MongoDB</li>
-					<li>SQLite</li>
-					<li>Cassandra</li>
-					<li>QBase</li>
+					<li>Calculer</li>
+					<li>Interpreter</li>
+					<li>Traiter les données</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="3.1.5" parent="3.1" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Big Data</h2>
+			<div class="info">
+				<ul>
+					<li>Collection de données</li>
+					<li>Traitement et interprétations</li>
+					<li>GRANDS datasets</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="3.1.6" parent="3.1" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Bas niveau/ Basic Software</h2>
+			<div class="info">
+				<ul>
+					<li>Programmation très proche de la machine</li>
+					<li>Programmation de micro-controleurs</li>
+					<li>Récupération de données de capteurs</li>
 				</ul>
 			</div>
 		</div>
@@ -102,22 +138,119 @@
 
 	<div id="3.2.1" parent="3.2" level="3" class="step bubble technology" data-rotate="-90">
 		<div class="infoSquare">
-			<h2>Audit</h2>
+			<h2>Sureté de fonctionnement</h2>
 			<div class="info">
+				<ul>
+					<li>Assurer la durée de vie d’un système</li>
+					<li>Prévoir les défaillances.</li>
+					<li>Fiabilité</li>
+					<li>Sécurité</li>
+					<li>Maintenabilité</li>
+					<li>Disponibilité</li>
+				</ul>
 			</div>
 		</div>
 	</div>
 
 	<div id="3.2.2" parent="3.2" level="3" class="step bubble technology" data-rotate="-90">
 		<div class="infoSquare">
-			<h2>Biometrie</h2>
+			<h2>QHSE (Qualité Hygiène Sécurité Environnement)</h2>
 			<div class="info">
+				<ul>
+					<li>Risques professionnels au sein de l'entreprise</li>
+					<li>Conduire à un système de management intégré</li>
+				</ul>
 			</div>
 		</div>
 	</div>
 
-	<div id="3.2.3" parent="3.2" level="3" class="step bubble technology" data-rotate="-90"></div>
+	<div id="3.2.3" parent="3.2" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Qualité</h2>
+			<div class="info">
+				<ul>
+					<li>Expertise de la chaine industrielle dans son ensemble</li>
+					<li>Conformité des produits/services fabriqués</li>
+					<li>Garant du respect des normes et des réglementations</li>
+					<li>Maximisation de la productivité</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="3.2.4" parent="3.2" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Test et Validation</h2>
+			<div class="info">
+				<ul>
+					<li>Test: Le système est utile aux utilisateurs?</li>
+					<li>Validation: Le Système est conforme aux exigences?</li>
+				</ul>
+			</div>
+		</div>
+	</div>		
 		
+	<div id="3.3.1" parent="3.3" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Mécanique CAO</h2>
+			<div class="info">
+				<ul>
+					<li>Conception de pièces</li>
+					<li>Tailles variables (petites et grandes</li>
+					<li>Logiciel CATIA</li>
+				</ul>
+			</div>
+		</div>
+	</div>		
+
+	<div id="3.3.1" parent="3.3" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Mécanique Cinématique</h2>
+			<div class="info">
+				<ul>
+					<li>Mécanique du mouvement</li>
+					<li>Calculs intensifs</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="3.3.1" parent="3.3" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Mécanique des fluides</h2>
+			<div class="info">
+				<ul>
+					<li>Régulation des fluides</li>
+					<li>Aérodynamique</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="3.3.1" parent="3.3" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Mécanique vibratoire</h2>
+			<div class="info">
+				<ul>
+					<li>Étude des oscillations mécaniques</li>
+					<li>Déplacement de l'air</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="3.3.1" parent="3.3" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Mécanique des matériaux</h2>
+			<div class="info">
+				<ul>
+					<li>Résistance des matériaux</li>
+					<li>ANSIS: Logiciel de simulation numérique</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
 	<div id="3.4.1" parent="3.4" level="3" class="step bubble technology" data-rotate="-90">
 		<div class="infoSquare">
 			<h2>Electronique de Puissance</h2>
@@ -150,9 +283,90 @@
 		<div class="infoSquare">
 			<h2>Micro-electronique</h2>
 			<div class="info">
+				<ul>
+					<li>CI</li>
+					<li>Composants</li>
+					<li>Petits Signaux</li>
+				</ul>
 			</div>
 		</div>
 	</div>
+
+	<div id="3.4.4" parent="3.4" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Nano-electronique</h2>
+			<div class="info">
+				<ul>
+					<li>Tout petit</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="3.4.5" parent="3.4" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Analogique</h2>
+			<div class="info">
+				<ul>
+					<li>Signaux</li>
+					<li>Puissance faible à moyenne</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="3.4.6" parent="3.4" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Numérique</h2>
+			<div class="info">
+				<ul>
+					<li>FPGA/ASIC</li>
+					<li>Traduit signaux en données chiffrées</li>
+					<li>Traitement du signal</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="3.4.7" parent="3.4" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Électrotechnique</h2>
+			<div class="info">
+				<ul>
+					<li>Hautes tensions appliquées</li>
+					<li>Traitement du signal</li>
+					<li>Alstom</li>
+					<li>Valeo</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="3.5.1" parent="3.5" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Automatique</h2>
+			<div class="info">
+				<ul>
+					<li>Contrôle-commande</li>
+					<li>Asservissement</li>
+					<li>Régulation</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="3.5.2" parent="3.5" level="3" class="step bubble technology" data-rotate="-90">
+		<div class="infoSquare">
+			<h2>Automatisme</h2>
+			<div class="info">
+				<ul>
+					<li>Aspect Séquentiel</li>
+					<li>Grafset</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
 
 	<!-- ======================================================================== LEVEL 4 BUBBLES ============================================================= -->	
 
@@ -162,8 +376,8 @@
 			<h2>Power Design Engineer</h2>
 			<div class="info">
 				<ul>
-					<li>Electronique de puissance</li>
 					<li>Design du convertisseur Auxiliaire Simulation des puissances</li>
+					<li>Spécifier les composants électriques des entraînements de traction ou des convertisseurs auxiliaires</li>
 					<li>Design du systeme de traction</li>
 					<li>Rediger le cahier des charges pour le fournisseur</li>
 					<li>Suivi fournisseurs de developpements</li>
@@ -174,6 +388,7 @@
 					<a href="#3.4"><li>MATLAB, SABER, MATHCAD or CITHEL</li></a>
 					<a href="#3.4"><li>Transistors IGBT</li></a>
 					<a href="#3.4"><li>Convertisseurs de Puissance</li></a>
+					<a href="#3.4"><li>Composants d'interface</li></a>
 					<a href="#3.4"><li>Transformateurs</li></a>
 					<a href="#3.4"><li>Diode</li></a>
 				</ul>
@@ -183,20 +398,42 @@
 
 	<div id="1.1.1.2" parent="1.1.1" level="4" class="step bubble entreprise">
 		<div class="infoSquare">
-			<h2>Architecture fonctionnelle du systeme ERTMS</h2>
+			<h2>Architecture détaillée du systeme ERTMS</h2>
 			<div class="info">
+				<ul>
+					<li>Définir les interfaces de la plateforme</li>
+					<li>Design Hardware</li>
+					<li>Design Software</li>
+				</ul>
 			</div>
 			<div class="tech">
+				<ul>
+					<li>Électronique analogique et numérique</li>
+					<li>VHDL</li>
+					<li>Développement logiciel (C, Assembleur)</li>
+					<li>Outils de CAO et Simulation</li>
+				</ul>
 			</div>
 		</div>
 	</div>
 
 	<div id="1.1.1.3" parent="1.1.1" level="4" class="step bubble entreprise">
 		<div class="infoSquare">
-			<h2>Architecture detaillee systeme ERTMS</h2>
+			<h2>Ingénieur système fonctionnel</h2>
 			<div class="info">
+				<ul>
+					<li>Analyse, développement systèmes de signalisation</li>
+					<li>Intégration et Tests </li>
+					<li>Traçabilité des spécifications fonctionnelles</li>
+					<li>Anticipation des évolutions du système</li>
+				</ul>
 			</div>
 			<div class="tech">
+				<ul>
+					<li>Electronique</li>
+					<li>Software</li>
+					<li>QCD (Qualité, Coût, Délai)</li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -205,8 +442,17 @@
 		<div class="infoSquare">
 		<h2>Developpement de capteurs Tachymetrique</h2>
 			<div class="info">
+				<ul>
+					<li>Recherche technologique</li>
+					<li>Conception nouveau système de calcul</li>
+				</ul>
 			</div>
 			<div class="tech">
+				<ul>
+					<li>Mécatronique</li>
+					<a href="#3.5"><li>Automatique</li></a>
+					<a href="#3.1"><li>Dev système embarqué (Capteurs)</li></a>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -217,7 +463,7 @@
 			<div class="info">
 				<ul>
 					<li>Design software</li>
-					<li>Design et maintenance de modules software</li>
+					<li>Design, maintenance modules software</li>
 					<li>Tests unitaires, d'integration, de fonctionnalite</li>
 					<li>Redaction de la spec fonctionnnelle</li>
 					<li>Redaction de specifications et rapports de tests</li>
@@ -226,7 +472,7 @@
 			</div>
 			<div class="tech">
 				<ul>
-					<a href="#3.1"><li>Delphi, C, C++, Ada, 
+					<a href="#3.1"><li>Delphi, C, C++, Ada</li></a>
 					<a href="#3.1"><li>Visual Basic</li></a>
 					<a href="#3.1"><li>Linux</li></a>
 					<a href="#3.1"><li>Microsoft SQL Server</li></a>
@@ -234,6 +480,249 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="1.2.1.1" parent="1.2.1" level="4" class="step bubble entreprise">
+		<div class="infoSquare">
+		<h2>Technicien de test en électronique</h2>
+			<div class="info">
+				<ul>
+					<li>Applications spatiales embarquées</li>
+					<li>Tests manuels et semi-automatiques</li>
+					<li>Sécurisation du banc de test (préservation du matériel)</li>
+				</ul>
+			</div>
+			<div class="tech">
+				<ul>
+					<a href="#3.1"><li>Electronique Analogique et RF</li></a>
+					<a href="#3.1"><li>App. de mesures "classiques" Oscilloscope, DVM</li></a>
+					<a href="#3.1"><li>Power meter, network analyse, spectrum</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="1.2.1.2" parent="1.2.1" level="4" class="step bubble entreprise">
+		<div class="infoSquare">
+		<h2>Ingénieur Système de Validation Electronique</h2>
+			<div class="info">
+				<ul>
+					<li>Conception des différents étages de puissance du lanceur Ariane 6</li>
+					<li>Définition de l'architecture des systèmes électroniques</li>
+					<li>Essai et validation des modules sur banc de test</li>
+				</ul>
+			</div>
+			<div class="tech">
+				<ul>
+					<a href="#3.1"><li>Electronique</li></a>
+					<a href="#3.1"><li>Bancs de tests</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="1.2.1.3" parent="1.2.1" level="4" class="step bubble entreprise">
+		<div class="infoSquare">
+		<h2>Ingénieur concepteur DC/DC Electronique</h2>
+			<div class="info">
+				<ul>
+					<li>Définition, conception convertisseurs coupe basse puissance 100W</li>
+					<li>Etude des spécifications et systèmes électriques</li>
+					<li>Conception/validation diagrammes électroniques sur simulateur</li>
+					<li>Analyse modes de défaillance</li>
+					<li>Analyse contraintes des composants</li>
+				</ul>
+			</div>
+			<div class="tech">
+				<ul>
+					<a href="#3.1"><li>Design et conception de cartes électroniques</li></a>
+					<a href="#3.1"><li>Convertisseurs DC/DC</li></a>
+					<a href="#3.1"><li>Electronique Analogique et de Puissance</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="1.2.1.4" parent="1.2.1" level="4" class="step bubble entreprise">
+		<div class="infoSquare">
+		<h2>Designer Electronique </h2>
+			<div class="info">
+				<ul>
+					<li>Orientation de la tuyère moteur vulcain</li>
+					<li>Conception d'équipement</li>
+					<li>Mesure de température</li>
+					<li>Monitoring des batteries/ Oscillateur</li>
+				</ul>
+			</div>
+			<div class="tech">
+				<ul>
+					<a href="#3.1"><li>Procédures de test du premier démonstrateur</li></a>
+					<a href="#3.1"><li>Automatisation avec logiciel propriétaire</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="1.2.1.5" parent="1.2.1" level="4" class="step bubble entreprise">
+		<div class="infoSquare">
+		<h2>Ingénieur en conception électronique (analogique/numérique)</h2>
+			<div class="info">
+				<ul>
+					<li>Solid Thrust Vector Actuation Subsystem</li>
+					<li>Propulseur d'appoint Ariane 6</li>
+					<li>Module Electronic Control et Power Unit</li>
+					<li>Etages de puisance, contrôle Orientation tuyère</li>
+					<li>Conception et développement de fonctions Analogiques et Numériques</li>
+				</ul>
+			</div>
+			<div class="tech">
+				<ul>
+					<a href="#3.1"><li>Mesure t° Capteurs</li></a>
+					<a href="#3.1"><li>Mesure tension isolée</li></a>
+					<a href="#3.1"><li>Numérique: FPGA</li></a>
+					<a href="#3.1"><li>Puissance: gate driver isolé IGBT</li></a>
+					<a href="#3.1"><li>Puissance: convertisseur DC/DC isolé</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="1.2.1.6" parent="1.2.1" level="4" class="step bubble entreprise">
+		<div class="infoSquare">
+		<h2>Technicien Tests Electronique EPC</h2>
+			<div class="info">
+				<ul>
+					<li>Mener à bien la mise au point et la recette d’équipements spatiaux</li>
+					<li>Réaliser des tests manuels et semi-automatiques</li>
+					<li>Investiguer et dépanner si besoin</li>
+					<li>Rédiger les rapports de tests</li>
+				</ul>
+			</div>
+			<div class="tech">
+				<ul>
+					<a href="#3.1"><li>Tests</li></a>
+					<a href="#3.1"><li>Validation</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="1.3.1.1" parent="1.3.1" level="4" class="step bubble entreprise">
+		<div class="infoSquare">
+		<h2>Ingénieur en Electronique et SW Bas Niveau</h2>
+			<div class="info">
+				<ul>
+					<li>Tests, Validation d'alimentations</li>
+					<li>Tests, Validation d'appareils de mesure</li>
+				</ul>
+			</div>
+			<div class="tech">
+				<ul>
+					<a href="#3.1"><li>Electronique Analogique</li></a>
+					<a href="#3.1"><li>Electronique de Puissance</li></a>
+					<a href="#3.1"><li>SW Bas Niveau</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>	
+
+	<div id="1.3.2.1" parent="1.3.2" level="4" class="step bubble entreprise">
+		<div class="infoSquare">
+		<h2>Ingénieur Logiciel Embarqué</h2>
+			<div class="info">
+				<ul>
+					<li>Développement SW Bas Niveau Python sur des FPGA et ASIC</li>
+				</ul>
+			</div>
+			<div class="tech">
+				<ul>
+					<a href="#3.1"><li>Logiciel Embarqué</li></a>
+					<a href="#3.1"><li>Langage: C, VHDL</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="1.3.3.1" parent="1.3.3" level="4" class="step bubble entreprise">
+		<div class="infoSquare">
+		<h2>Hardware Project Leader</h2>
+			<div class="info">
+				<ul>
+					<li>Cycle de vie de conception du produit</li>
+					<li>Piloter schéma et conception avec l'ODM.</li>
+					<li>Tests des matériels</li>
+					<li>Coordination (mécanique, conformité...)</li>
+				</ul>
+			</div>
+			<div class="tech">
+				<ul>
+					<a href="#3.1"><li>Logiciel Embarqué</li></a>
+					<a href="#3.1"><li>Passerelles xDSL / LTE / xPON</li></a>
+					<a href="#3.1"><li>Routeurs WLAN</li></a>
+					<a href="#3.1"><li>Décodeurs Proximus</li></a>
+					<a href="#3.1"><li>Circuits imprimés hf</li></a>
+					<a href="#3.1"><li>Interfaces RF</li></a>
+					<a href="#3.1"><li>Wifi 2.4/5Ghz</li></a>
+					<a href="#3.1"><li>Bluetoot, Zigbee, Z-wave</li></a>
+					<a href="#3.1"><li>LTE, Antennes</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="1.4.1.1" parent="1.4.1" level="4" class="step bubble entreprise">
+		<div class="infoSquare">
+		<h2>Mise à jour des sites Web publics</h2>
+			<div class="info">
+				<ul>
+					<li>Analyse de données</li>
+					<li>Développement C++</li>
+					<li>Développement et design WEB</li>
+				</ul>
+			</div>
+			<div class="tech">
+				<ul>
+					<a href="#3.1"><li>HTML</li></a>
+					<a href="#3.1"><li>Javascript</li></a>
+					<a href="#3.1"><li>CSS</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="1.4.1.2" parent="1.4.1" level="4" class="step bubble entreprise">
+		<div class="infoSquare">
+		<h2>Conception de l'environnement et du développement des données</h2>
+			<div class="info">
+				<ul>
+					<li>Research and Developpment IT</li>
+				</ul>
+			</div>
+			<div class="tech">
+				<ul>
+					<a href="#3.1"><li>C++</li></a>
+					<a href="#3.1"><li>IT avec un bon relationnel</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="1.4.1.3" parent="1.4.1" level="4" class="step bubble entreprise">
+		<div class="infoSquare">
+		<h2>Analyse d'affaires DDR2 de qualité</h2>
+			<div class="info">
+				<ul>
+					<li>Analyste de données</li>
+					<li>Design et Developpement</li>
+				</ul>
+			</div>
+			<div class="tech">
+				<ul>
+					<a href="#3.1"><li>C ++</li></a>
+					<a href="#3.1"><li>Analyse de données</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>	
 
 		<!-- ========== COMPANY LINKS ========= -->
 	<div id="3.4.1.1" parent="3.4.1" level="4" class="step link bubble technology" data-rotate="-90"><div class="logoSquare"><a href="#1.1.3"><img src="./img/siemens.png"></a></div></div>
