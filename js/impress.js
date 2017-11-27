@@ -2013,7 +2013,7 @@
         gc.addEventListener(document, "click", function ( event ) {
             var target = event.target;
             // find closest step element that is not active
-            while ( !(target.classList.contains("step") && !target.classList.contains("active")) &&
+            while ( !(target.classList.contains("step") && !target.classList.contains("active") && !target.classList.contains("link")) &&
                     (target !== document.documentElement) ) {
                 target = target.parentNode;
             }
