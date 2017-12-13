@@ -1,3 +1,85 @@
+
+var defaultScreenSizes = [
+{"level": "0", "size": 5000 + 'px'},
+{"level": "1", "size": 1000 + 'px'},
+{"level": "2", "size": 1000 + 'px'},
+{"level": "3", "size": 1000 + 'px'},
+{"level": "4", "size": 1000 + 'px'},
+{"level": "5", "size": 1000 + 'px'}
+];
+
+var defaultDataScales = [
+{"level": "0", "dataScale": 100},
+{"level": "1", "dataScale": 46},
+{"level": "2", "dataScale": 11},
+{"level": "3", "dataScale": 3},
+{"level": "4", "dataScale": 1}
+];
+
+var defaultRadius = [
+{"level": "0", "radius": 25000},
+{"level": "1", "radius": 28000},
+{"level": "2", "radius": 15000},
+{"level": "3", "radius": 3500},
+{"level": "4", "radius": 900}
+];
+
+var specificDataScales = {
+"children": [
+		{"parentId": "1.2.1",	"childrenDataScale": 1.4},
+		{"parentId": "1.3",		"childrenDataScale": 3.8},
+		{"parentId": "1.4.1",	"childrenDataScale": 1.9},
+		{"parentId": "3.1",		"childrenDataScale": 4},
+		{"parentId": "3.1.1",	"childrenDataScale": 1},
+		{"parentId": "3.1.3",	"childrenDataScale": 0.8},
+		{"parentId": "3.2",		"childrenDataScale": 3.5},
+		{"parentId": "3.3",		"childrenDataScale": 3.3},
+		{"parentId": "3.4",		"childrenDataScale": 3.4},
+		{"parentId": "3.4.1",	"childrenDataScale": 0.6},
+		{"parentId": "3.4.5",	"childrenDataScale": 0.7},
+		{"parentId": "3.5", 	"childrenDataScale": 4},
+		{"parentId": "3.5.1", 	"childrenDataScale": 0.9},
+		{"parentId": "3.6",		"childrenDataScale": 4}
+],
+"single": [
+		{"id": "1",			"dataScale": 50},
+		{"id": "1.2.1",		"dataScale": 5},
+		{"id": "1.3.1.1",	"dataScale": 2},
+		{"id": "1.3.2.1",	"dataScale": 2},
+		{"id": "1.3.3.1",	"dataScale": 2},
+		{"id": "1.4.1",		"dataScale": 5},
+		{"id": "2", 		"dataScale": 35},
+		{"id": "3.4", 		"dataScale": 13},
+		{"id": "3.5", 		"dataScale": 10}
+
+]}
+
+
+var specificRadius = {
+"children": [
+		{"parentId": "1",		"childrenRadius": 16500},
+		{"parentId": "1.2.1",	"childrenRadius": 1500},
+		{"parentId": "1.4.1",	"childrenRadius": 1200},
+		{"parentId": "1.3",		"childrenRadius": 2700},
+		{"parentId": "3.1",		"childrenRadius": 2700},
+		{"parentId": "3.1.1",	"childrenRadius": 1200},
+		{"parentId": "3.1.3",	"childrenRadius": 1300},
+		{"parentId": "3.2",		"childrenRadius": 2900},
+		{"parentId": "3.3",		"childrenRadius": 3200},
+		{"parentId": "3.4",		"childrenRadius": 4200},
+		{"parentId": "3.4.1",	"childrenRadius": 1200},
+		{"parentId": "3.4.5",	"childrenRadius": 1100},
+		{"parentId": "3.5",		"childrenRadius": 2200},
+		{"parentId": "3.5.1",	"childrenRadius": 1000},
+		{"parentId": "3.6",		"childrenRadius": 2700},
+],
+"single": [
+		{"id": "1",		"radius": 35800},
+		{"id": "2.1", 	"radius": 10000},
+		{"id": "2.2", 	"radius": 10000},
+		{"id": "3",		"radius": 26300}
+]}
+
 $(document).ready(function(e) {   
 	console.log('i am ready!');
 
@@ -73,31 +155,7 @@ $(document).ready(function(e) {
 		$(id).click();
 		event.stopPropagation();
 	})
-/*
-	$('h2').on("click",function(event) {
-		if ( event.ctrlKey ) {
-        	$(this).html(prompt("enter new title"));
-    	}
-	})
 
-	$('.infoColumn span').on("click",function(event){
-		if ( event.ctrlKey ) {
-			let content = prompt("enter content");
-			if (content) {$(this).html(content);}
-    	}
-	})
-
-	$('.techColumn').on("click",function(event){
-		event.stopPropagation();
-		if ( event.ctrlKey ) {
-			let content = prompt("Name of new link?");
-			let link = prompt("Target for link?");
-			if (content && link) {
-				$('ul', this).append('<li>well that was easy</li>');
-			}
-    	}
-	})
-*/
 	$(window).on("keyup",function(e) {
 		let newWidth;
 		let newHeight;
@@ -105,7 +163,8 @@ $(document).ready(function(e) {
 		let destination;
 		let nBubbles;
 		let parent;
-		let level = parseInt($('.active').attr('level'));
+		let level = parseFloat($('.active').attr('level'));
+		let currentScale = parseFloat($('.active').attr('data-scale'));
 		
 		switch ( e.key) {
         	case "ArrowLeft":
@@ -127,15 +186,15 @@ $(document).ready(function(e) {
             	}       	
             	break;
 
-            case "+":            	
-            	let upScale = parseInt($('.active').attr('data-scale')) + 1;
-            	$('.active').attr('data-scale', upScale);
+            case "+":      	
+            	currentScale += currentScale/10;
+            	$('.active').attr('data-scale', currentScale);
             	impress().goto($('.active').attr('id'));
-
             	break;
+
             case "-":
-            	let downScale = parseInt($('.active').attr('data-scale')) - 1;
-            	$('.active').attr('data-scale', downScale);
+            	currentScale -= (currentScale/10);
+            	$('.active').attr('data-scale', currentScale);
             	impress().goto($('.active').attr('id'));
             	break;            	
 
@@ -162,16 +221,16 @@ $(document).ready(function(e) {
             	newRadius = parseInt($('.active').attr('radius')) + 100;
             	$('.active').attr('radius',newRadius);
 
-            	level != 0? distributeLevelnBubbles(level +1): distributeBubbles(1);
+            	distributeLevelnBubbles(level-1);
 
-            	console.log('id',$('.active').attr('id'),'level',level);
+            	console.log('id',$('.active').attr('id'),'level',level, 'radius',$('.active').attr('radius'));
             	impress().goto($('.active').attr('id'));
             	break;
             
             case "6":
             	newRadius = parseInt($('.active').attr('radius')) - 100;
             	$('.active').attr('radius',newRadius);
-				level != 0? distributeLevelnBubbles(level +1): distributeLevelnBubbles(1);
+				distributeLevelnBubbles(level-1);
 				console.log('id',$('.active').attr('id'),'level',level);
             	impress().goto($('.active').attr('id'));
             	break;
@@ -184,53 +243,7 @@ $(document).ready(function(e) {
 document.addEventListener("DOMContentLoaded", function(event) {
 
 	console.log("DOM fully loaded and parsed");
-
-	var back = 5000 + 'px';
-	var lev1 = 1000 + 'px';
-	var lev2 = 1000 + 'px';
-	var lev3 = 1000 + 'px';
-	var lev4 = 1000 + 'px';
-	var companyBadges = 700 + 'px';
-
-	$('.backBubble').attr("data-scale",100);
-	$('[level=1]').attr("data-scale",40); 
-	$('[level=2]').attr("data-scale",11);
-	$('[level=3]').attr("data-scale",3);
-	$('[level=4]').attr("data-scale",1);
-
-	$('.backBubble').attr("radius",25000);
-	$('[level=1]').attr("radius",25000);	
-	$('[level=2]').attr("radius",10500);		        
-	$('[level=3]').attr("radius",3500);
-	$('[level=4]').attr("radius",900);
-
-	// $('[id='+escapeSelector('3.4')+']').attr("radius",3000);
-	// $('[id='+escapeSelector('3.4.1')+']').attr("radius",1000);
-
-	$('.backBubble').css({        	
-		"height": back,
-		"width": back
-    });
-
-	$('[level=1]').css({        	
-		"height": lev1,
-		"width": lev1
-    });
-
-	$('[level=2]').css({        	
-		"height": lev2,
-		"width": lev2
-    });
-
-    $('[level=3]').css({        	
-		"height": lev3,
-		"width": lev3
-    });
-
-    $('[level=4]').css({        	
-		"height": lev4,
-		"width": lev4
-    });
+	var companyBadges = 1000 + 'px';
 
     $('.link').css({
     	"height": companyBadges,
@@ -240,22 +253,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
    	$('[level=3]').hide();
    	$('[level=4]').hide();
 
+   	applyBubbleStyle();
 	distributeLevelnBubbles(0);
 	impress().init();
 });
 
 
 // Functions
-function escapeSelector(s){
-	return s.replace( /(:|\.|\[|\])/g, "\\$1" );
-}	
-
-function escapeHash(s){
-    return s.replace(/\#/g,''); 
-}
-
-function distributeLevelnBubbles(n) { // 1
-	
+function distributeLevelnBubbles(n) { 
 	$("[level=" + n +"]").each(function() { 
 		let id = escapeSelector($(this).attr('id'));
 		let children = $('[level='+(n+1)+']'+'[parent='+id+']');
@@ -269,7 +274,7 @@ function distributeLevelnBubbles(n) { // 1
 
 		children.each(function() {
 			let radius = parseInt($(this).attr('radius'));
-			children.length == 1 ? radius = 0 : null;
+			((children.length == 1) && ($(this).hasClass('entreprise'))) ? radius = 0 : null;
 	        let x = Math.round(parseInt($('#'+id).attr('data-x')) + radius * Math.cos(angle)); 
 	        let y = Math.round(parseInt($('#'+id).attr('data-y')) + radius * Math.sin(angle)); 
 			$(this).attr("data-x",x).attr("data-y",y);
@@ -281,3 +286,51 @@ function distributeLevelnBubbles(n) { // 1
 	distributeLevelnBubbles(n+1);
 }
 
+function applyBubbleStyle() {
+	// On screen size when bubble is clicked on
+	defaultScreenSizes.forEach(function(e) {
+		$('[level='+e.level+']').css({        	
+			"height": e.size,
+			"width": e.size
+    	});
+	})
+
+	// the size of the bubble when it is not active
+	defaultDataScales.forEach(function(e) {
+		$('[level='+e.level+']').attr("data-scale",e.dataScale);		
+	})	
+
+	// distance of bubble % center
+	defaultRadius.forEach(function(e) {
+		$('[level='+e.level+']').attr("radius",e.radius);		
+	})	
+
+	specificDataScales.children.forEach(function(e) {
+		$('[parent='+escapeSelector(e.parentId)+']').attr("data-scale",e.childrenDataScale);	
+	})
+
+	specificDataScales.single.forEach(function(e) {
+		$(jq(e.id)).attr("data-scale",e.dataScale);
+	})
+
+	specificRadius.children.forEach(function(e){
+		$('[parent='+escapeSelector(e.parentId)+']').attr("radius",e.childrenRadius);	
+	})
+
+	specificRadius.single.forEach(function(e){
+		$(jq(e.id)).attr("radius",e.radius);	
+	})
+
+}
+
+function escapeSelector(s){
+	return s.replace( /(:|\.|\[|\])/g, "\\$1" );
+}	
+
+function escapeHash(s){
+    return s.replace(/\#/g,''); 
+}
+
+function jq( myid ) {
+    return "#" + myid.replace( /(:|\.|\[|\]|,|=|@)/g, "\\$1" );
+}
