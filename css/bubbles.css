@@ -159,7 +159,10 @@ img {
     object-fit: contain;
 }
 
-
+.linkIcon {
+	height: 20px;
+	width: 20px;
+}
 
 a {
   text-decoration: none; /* no underline */
